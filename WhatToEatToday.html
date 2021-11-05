@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>农贸吃啥？</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+		var meal_list=new Array("曹氏鸭脖","酸辣粉","渔粉","花甲米线","坑板烧","豆花面","乐山钵钵鸡","三元冒菜");
+		document.write("现在时刻："+new Date());
+		document.write("<br><br>今天的菜单是："+ meal_list);
+		function ganfan(){
+			var random_num=Math.floor(Math.random()*8);
+			document.form1.outcome.value=meal_list[(random_num^(document.form1.num_ganfan.value))%8];
+		}
+	</script>
+	<form name="form1">
+		<br>请输入干饭人数：<input type="text" name="num_ganfan">
+		<input type="button" value="干饭！" onclick="ganfan()">
+		<br><br>请干饭：
+		<input type="text" name="outcome">
+	</form>
+</body>
+</html>
